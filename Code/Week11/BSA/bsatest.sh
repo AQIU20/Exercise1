@@ -64,12 +64,18 @@ fi
 # fi
 
 #wget Neill's version of other files
-wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/Makefile
-wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/bsa.h
-wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/driver.c
-wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/fibmemo.c
-wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/isfactorial.c
-wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/sieve.c
+# wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/Makefile
+# wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/bsa.h
+# wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/driver.c
+# wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/fibmemo.c
+# wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/isfactorial.c
+# wget https://raw.githubusercontent.com/csnwc/Exercises-In-C/main/Code/Week11/BSA/sieve.c
+cp ../Makefile ./
+cp ../bsa.h ./
+cp ../driver.c ./
+cp ../fibmemo.c ./
+cp ../isfactorial.c ./
+cp ../sieve.c ./
 
 # Try and compile the code
 make driverbsa_s
