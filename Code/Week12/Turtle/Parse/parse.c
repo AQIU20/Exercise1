@@ -198,7 +198,7 @@ bool VARNUM(Program* p) {
     } 
     p->cw = cw;
     if (NUM(p)) {
-            return true;
+        return true;
     }
     p->cw = cw;
     return false;
