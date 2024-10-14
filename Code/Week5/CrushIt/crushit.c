@@ -26,6 +26,8 @@ bool initialise(state* s, const char* str)
     char buffer[150] = {0};
     s->row = 0;
     s->col = 5;
+
+    //directly enter 
     if (fp == NULL) {
         // check if its a board
         if (!isFormalStr(str)) {
@@ -34,7 +36,10 @@ bool initialise(state* s, const char* str)
         }
 
         strcpy(buffer, str);
-    }else {
+    }
+
+    //load Characters from file
+    else {
         char ch;
         int i = 0;
         while ((ch = fgetc(fp)) != EOF) {
@@ -75,6 +80,7 @@ bool tostring(const state* s, char* str)
     return true;
 }
 
+//check one placement matches
 int checkMatch(state *s, int x, int y, int direction) {
     char c = s->board[x][y];
     if (c == '.') {
@@ -109,7 +115,7 @@ bool matches(state* s)
     bool tmpBoard[MAXROWS][WIDTH] = {false};
     int startRow = s->row - HEIGHT;
     bool removeFlag = false;
-    // printf("matches\n");
+    
     for (int i = startRow; i < s->row; i++) {
         for (int j = 0; j < s->col; j++) {
             int len = 0;
@@ -151,7 +157,7 @@ bool dropblocks(state* s)
     if (s == NULL) {
         return false;
     }
-    // printf("drop\n");
+    
     
     // scan each column from bottom to top
     // write down the non-hole block and rearrange from bottom to top
