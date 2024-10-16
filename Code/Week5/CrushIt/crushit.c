@@ -31,7 +31,10 @@ bool initialise(state* s, const char* str)
     if (fp == NULL) {
         // check if its a board
         if (!isFormalStr(str)) {
-            perror("string either a filename or a formal string!\n");
+            /*
+            printf("String '%s' is not a formal string!\n", str);
+            perror("string either a filename or a formal string\n");
+            */
             return false;
         }
 
@@ -59,7 +62,7 @@ bool initialise(state* s, const char* str)
             s->board[i][j] = buffer[i * s->col + j];
         }
     }
-    printf("row: %d maxHeight: %d\n", s->row, s->maxHeight);
+    
     return true;
 
 }
@@ -76,7 +79,7 @@ bool tostring(const state* s, char* str)
         }
     }
     str[k] = '\0';
-    printf("%s\n", str);
+    
     return true;
 }
 
