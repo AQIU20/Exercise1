@@ -1,2 +1,2 @@
 # Exercises 2024
-From neil at University of Bristol for COMSM1201
+From Neil at University of Bristol for COMSM1201
