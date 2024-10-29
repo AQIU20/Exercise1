@@ -1,2 +1,2 @@
-# Exercises-In-C
-Exercises in C - used at University of Bristol for COMSM1201
+# Exercises 2024
+From neil at University of Bristol for COMSM1201
