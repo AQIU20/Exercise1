@@ -1,5 +1,3 @@
-// Change this file in any way you like
-// Do not alter driver.c / Makefile / md.h
 #pragma once
 
 #include <stdio.h>
@@ -13,20 +11,21 @@
 #define BRDSZ 6
 #define MAXBRDS 200000
 
-/*
-Here define struct state -
-it might look something like:
+#define MAXSTR (BRDSZ*BRDSZ+BRDSZ+2)
 
-struct board{
-   2D array of tiles
-   hawk
-   parent
-}
 
-struct state{
-    array of struct board[];
-    etc.
-}
-*/
+typedef struct {
+    char tiles[BRDSZ][BRDSZ];
+    char hawk;
+    int parent;
+}board;
+
+ typedef struct  {
+    board brd[MAXBRDS];
+    int row;
+    int col;
+} state;
+
 
 #include "md.h"
+

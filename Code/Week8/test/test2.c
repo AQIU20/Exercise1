@@ -38,11 +38,9 @@ bool file2str(const char* fname, char* str) {
 }
 
 
-state* str2state(const char* str1) {
-    char str[MAXSTR];
-    strcpy(str, str1);
 
-    if (str1 == NULL) {
+state* str2state(char* str) {
+    if (str == NULL) {
         return NULL;
     }
 
@@ -94,7 +92,6 @@ state* str2state(const char* str1) {
         return NULL;
     }
 
-
     return s;
 }
 
@@ -130,6 +127,7 @@ int printBoard(state* s, int finalIndex, bool verbose) {
     //from to tail to head, its the board chain
     //print them out by order
     for (int i = index - 1; i >= 0; i--) {
+        printf("%c\n", s->brd[chain[i]].hawk);
 
         for (int j = 0; j < s->row; j++) {
             for (int k = 0; k < s->col; k++) {
@@ -137,10 +135,11 @@ int printBoard(state* s, int finalIndex, bool verbose) {
             }
             printf("\n");  
         }
-
-        printf("\n");
-
         
+        
+        if (i > 0) {
+            printf("\n");
+        }
     }
     
     return index - 1;
@@ -227,6 +226,18 @@ int solve(state* s, bool verbose)
         if (checkFinalBoard(s, parentBoard)) {
             return printBoard(s, checkIndex, verbose);
         }
+        
+        // printf("checkIndex: %d boardLen: %d\n", checkIndex, boardlen);
+        // printf("parent board:\n");
+        // printf("%c\n", parentBoard->hawk);
+        // for (int i = 0; i < s->row; i++) {
+        //     for (int j = 0; j < s->col; j++) {
+        //         printf("%c ", parentBoard->tiles[i][j]);
+        //     }
+        //     printf("\n");
+        // }
+        // printf("\n");
+
 
 
         //get all childBoard
@@ -267,7 +278,16 @@ int solve(state* s, bool verbose)
 
 void test(void)
 {
-    
+    char str[MAXSTR];
+    state* s;
+
+    //assert(file2str("2moves.brd", str));
+    strcpy(str, "A-ABC-ABC-ABC-CBA");
+    s = str2state(str);
+    assert(s);
+    assert(solve(s, true)==2);
+    free(s);
+
 
    
 }
