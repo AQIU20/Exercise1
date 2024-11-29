@@ -1,0 +1,17 @@
+it replaced the original 27-way tree with a dynamic linked tree structure to slove wasted memory.
+
+Comparison
+The 27-way tree is efficient for fixed character sets like alphabets but uses a fixed-size dwn[ALPHA] array for each node, which wastes memory.
+The linked tree doesn’t waste memory because it only creates nodes when needed, but it’s slower for some operations.
+
+Flexibility
+The 27-way tree is not flexible and hard to expand or reduce.
+The linked tree is more flexible because it uses dynamic memory and linked lists for managing nodes.
+
+Lookup Efficiency
+The 27-way tree is faster for searching, with a time complexity of O(1) per level.
+The linked tree is slower, with a time complexity of O(n) per level, because it searches through sibling nodes.
+
+Conclusion
+The 27-way tree is simple, with fixed memory and clear logic.
+The linked tree is more complex but more flexible and uses memory more efficiently.
